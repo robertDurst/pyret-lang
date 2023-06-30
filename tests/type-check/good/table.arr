@@ -11,3 +11,6 @@ tbl = table: name, age
   row: "Alice", 15
   row: "Eve", 13
 end
+
+# this is valid and should pass the type checker
+sender-column = email.get-column('sender')
