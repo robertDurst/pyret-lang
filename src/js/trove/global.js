@@ -523,10 +523,11 @@
         "_greaterthan": ["arrow", ["String"], "Boolean"],
         "_greaterequal": ["arrow", ["String"], "Boolean"]
       }],
-      "Table": ["data", "Table", [], [], {
-        "length": ["arrow", [], "Number"]
-      }],
       "Row": ["data", "Row", [], [], { }],
+      "Table": ["data", "Table", [], [], {
+        "length": ["arrow", [], "Number"],
+        "get-column": ["arrow", ["String"], ["List", "tany"]]
+      }],
       "Function": ["data", "Function", [], [], {}],
       "Boolean": ["data", "Boolean", [], [], {}],
       "Object": ["data", "Object", [], [], {}],
