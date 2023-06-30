@@ -24,6 +24,11 @@ sender-column :: List<Any> = email.get-column('sender')
 # https://pyret.org/docs/latest/tables.html#%28part._tables_.Table_table_row-n%29
 # Expected:
 #   .row-n :: (n :: Number) -> Row
+row-1 :: Row = email.row-n(1)
+
+# https://pyret.org/docs/latest/tables.html#%28part._tables_.Table_table_row-n%29
+# Expected:
+#   .add-column :: (colname :: String, new-vals :: List<Col>) -> Table
 # Actual:
-#   .row-n :: (n :: Number) -> Any
-row-1 :: Any = email.row-n(1)
+#   .add-column :: (colname :: String, new-vals :: List<Any>) -> Table
+email-modified :: Table = email.add-column('new-col', sender-column)

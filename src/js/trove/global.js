@@ -23,7 +23,13 @@
       "tve":      ["tid", "e"],
       "Equality": { tag: "name", 
                     origin: { "import-type": "uri", uri: "builtin://equality" },
-                    name: "EqualityResult" }
+                    name: "EqualityResult" },
+      "Row": { tag: "name", 
+                    origin: { "import-type": "uri", uri: "builtin://global" },
+                    name: "Row" },
+      "Table": { tag: "name", 
+                    origin: { "import-type": "uri", uri: "builtin://global" },
+                    name: "Table" },
     },
     values: {
       "print": ["forall", "a", ["arrow", ["tva"], "tva"]],
@@ -527,7 +533,8 @@
       "Table": ["data", "Table", [], [], {
         "length": ["arrow", [], "Number"],
         "get-column": ["arrow", ["String"], ["List", "tany"]],
-        "row-n": ["arrow", ["Number"], "tany"]
+        "row-n": ["arrow", ["Number"], "Row"],
+        "add-column": ["arrow", ["String", ["List", "tany"]], "Table"]
       }],
       "Function": ["data", "Function", [], [], {}],
       "Boolean": ["data", "Boolean", [], [], {}],
