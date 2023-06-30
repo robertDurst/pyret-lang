@@ -526,7 +526,8 @@
       "Row": ["data", "Row", [], [], { }],
       "Table": ["data", "Table", [], [], {
         "length": ["arrow", [], "Number"],
-        "get-column": ["arrow", ["String"], ["List", "tany"]]
+        "get-column": ["arrow", ["String"], ["List", "tany"]],
+        "row-n": ["arrow", ["Number"], "tany"]
       }],
       "Function": ["data", "Function", [], [], {}],
       "Boolean": ["data", "Boolean", [], [], {}],
