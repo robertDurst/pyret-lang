@@ -87,7 +87,6 @@
       "is-object":{'bind': 'fun', 'flatness': 0, 'name': 'is-object', 'typ': 'AnyPred'},
       "is-raw-array":{'bind': 'fun', 'flatness': 0, 'name': 'is-raw-array', 'typ': 'AnyPred'},
       "is-string":{'bind': 'fun', 'flatness': 0, 'name': 'is-string', 'typ': 'AnyPred'},
-      "is-table":{'bind': 'fun', 'flatness': 0, 'name': 'is-table', 'typ': 'AnyPred'},
       "is-row":{'bind': 'fun', 'flatness': 0, 'name': 'is-row', 'typ': 'AnyPred'},
       "is-tuple":{'bind': 'fun', 'flatness': 0, 'name': 'is-tuple', 'typ': 'AnyPred'},
 

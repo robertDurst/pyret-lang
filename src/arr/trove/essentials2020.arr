@@ -114,7 +114,6 @@ provide from G:
   is-function,
   is-raw-array,
   is-tuple,
-  is-table,
   is-row,
   gensym,
   random,

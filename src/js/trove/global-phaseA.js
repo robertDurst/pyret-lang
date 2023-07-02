@@ -36,7 +36,6 @@
       "is-object": "AnyPred",
       "is-function": "AnyPred",
       "is-raw-array": "AnyPred",
-      "is-table": "AnyPred",
       "is-tuple": "AnyPred",
 
       // Array functions

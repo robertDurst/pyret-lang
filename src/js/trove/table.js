@@ -804,7 +804,11 @@
           make3: runtime.makeFunction(function(v1, v2, v3) { return makeRowFromValues([v1, v2, v3]); }),
           make4: runtime.makeFunction(function(v1, v2, v3, v4) { return makeRowFromValues([v1, v2, v3, v4]); }),
           make5: runtime.makeFunction(function(v1, v2, v3, v4, v5) { return makeRowFromValues([v1, v2, v3, v4, v5]); })
-        })
+        }),
+
+        'is-table': runtime.makeFunction(function(v) {
+          return runtime.isTable(v);
+        }, "is-table"),
       }));
     }
     

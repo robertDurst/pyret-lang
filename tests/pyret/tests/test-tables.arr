@@ -3,6 +3,7 @@ import tables as TS
 import valueskeleton as VS
 import error as E
 import contracts as C
+import table as T
 
 fun contract(err, pred):
   pred(err.reason)
@@ -16,7 +17,7 @@ end
 
 check "Annotation and predicate":
   t :: Table = tbl
-  t satisfies is-table
+  t satisfies t.is-table
 end
 
 check "Per-row extensions":
