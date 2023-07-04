@@ -2,6 +2,7 @@ provide *
 provide-types *
 
 import global as _
+import table as T
 include lists
 
 type Reducer<Acc, InVal, OutVal> = {
@@ -72,7 +73,7 @@ raw-row = {
   make5: lam(t1, t2, t3, t4, t5): builtins.raw-make-row([raw-array: t1, t2, t3, t4, t5]) end,
 }
 
-fun empty-table(col-names :: List<String>) -> Table:
+fun empty-table(col-names :: List<String>) -> T.Table:
   for fold(t from table: ignore end.drop("ignore"),
            c from col-names):
     t.add-column(c, empty)
@@ -97,13 +98,13 @@ table-from-rows = {
   make5: lam(t1, t2, t3, t4, t5): table-from-raw-array([raw-array: t1, t2, t3, t4, t5]) end,
 }
 
-fun table-from-column<A>(col-name :: String, values :: List<A>) -> Table:
+fun table-from-column<A>(col-name :: String, values :: List<A>) -> T.Table:
   for fold(t from empty-table([list: col-name]), v from values):
     t.add-row([raw-row: {col-name; v}])
   end
 end
 
-table-from-cols :: RawArray<{String; List<Any>}> -> Table
+table-from-cols :: RawArray<{String; List<Any>}> -> T.Table
 fun table-from-cols(colspecs):
   if raw-array-length(colspecs) == 0:
     raise("table-from-columns requires at least one column")

@@ -23,7 +23,10 @@
       "tve":      ["tid", "e"],
       "Equality": { tag: "name", 
                     origin: { "import-type": "uri", uri: "builtin://equality" },
-                    name: "EqualityResult" }
+                    name: "EqualityResult" },
+      "Row": { tag: "name", 
+                    origin: { "import-type": "uri", uri: "builtin://global" },
+                    name: "Row" }
     },
     values: {
       "print": ["forall", "a", ["arrow", ["tva"], "tva"]],
@@ -81,7 +84,6 @@
       "is-object":{'bind': 'fun', 'flatness': 0, 'name': 'is-object', 'typ': 'AnyPred'},
       "is-raw-array":{'bind': 'fun', 'flatness': 0, 'name': 'is-raw-array', 'typ': 'AnyPred'},
       "is-string":{'bind': 'fun', 'flatness': 0, 'name': 'is-string', 'typ': 'AnyPred'},
-      "is-table":{'bind': 'fun', 'flatness': 0, 'name': 'is-table', 'typ': 'AnyPred'},
       "is-row":{'bind': 'fun', 'flatness': 0, 'name': 'is-row', 'typ': 'AnyPred'},
       "is-tuple":{'bind': 'fun', 'flatness': 0, 'name': 'is-tuple', 'typ': 'AnyPred'},
 
@@ -420,10 +422,7 @@
                     name: "RawArray" },
       "Row": { tag: "name", 
                     origin: { "import-type": "uri", uri: "builtin://global" },
-                    name: "Row" },
-      "Table": { tag: "name", 
-                    origin: { "import-type": "uri", uri: "builtin://global" },
-                    name: "Table" }
+                    name: "Row" }
     },
     datatypes: {
       "Number": ["data", "Number", [], [], {
@@ -522,9 +521,6 @@
         "_lessequal": ["arrow", ["String"], "Boolean"],
         "_greaterthan": ["arrow", ["String"], "Boolean"],
         "_greaterequal": ["arrow", ["String"], "Boolean"]
-      }],
-      "Table": ["data", "Table", [], [], {
-        "length": ["arrow", [], "Number"]
       }],
       "Row": ["data", "Row", [], [], { }],
       "Function": ["data", "Function", [], [], {}],

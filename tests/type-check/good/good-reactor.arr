@@ -1,4 +1,5 @@
 import reactors as R 
+import table as T
 
 reactor:
   init: 10,
@@ -15,4 +16,5 @@ r :: R.Reactor<Number> = reactor:
   init: 10,
 end
 
-t :: Table = R.simulate-trace(r, 20) 
+# TODO: fix
+# t :: T.Table = R.simulate-trace(r, 20) 

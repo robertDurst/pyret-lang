@@ -30,7 +30,6 @@ t-boolean                 = TS.t-boolean(A.dummy-loc)
 t-array                   = TS.t-array(_, A.dummy-loc)
 t-nothing                 = TS.t-nothing(A.dummy-loc)
 t-srcloc                  = TS.t-srcloc(A.dummy-loc)
-t-table                   = TS.t-table(A.dummy-loc)
 t-array-name              = TS.t-array-name
 
 type ModuleType           = TS.ModuleType
@@ -56,6 +55,7 @@ tvh = t-var(A.global-names.make-atom("H"))
 t-image = t-name(module-uri("builtin://image-lib"), A.s-type-global("Image"))
 t-option = t-name(module-uri("builtin://option"), A.s-type-global("Option"))
 t-reactor = t-name(module-uri("builtin://reactors"), A.s-type-global("Reactor"))
+t-table = t-name(module-uri("builtin://table"), A.s-type-global("Table"))
 t-equality-result = t-name(module-uri("builtin://equality"), A.s-type-global("EqualityResult"))
 t-value-skeleton = t-name(module-uri("builtin://valueskeleton"), A.s-type-global("ValueSkeleton"))
 t-list = t-name(module-uri("builtin://lists"), A.s-type-global("List"))

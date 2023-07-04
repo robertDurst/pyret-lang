@@ -36,7 +36,6 @@
       "is-object": "AnyPred",
       "is-function": "AnyPred",
       "is-raw-array": "AnyPred",
-      "is-table": "AnyPred",
       "is-tuple": "AnyPred",
 
       // Array functions
@@ -278,9 +277,6 @@
         "_lessequal": ["arrow", ["String"], "Boolean"],
         "_greaterthan": ["arrow", ["String"], "Boolean"],
         "_greaterequal": ["arrow", ["String"], "Boolean"]
-      }],
-      "Table": ["data", "Table", [], [], {
-        "length": ["arrow", [], "Number"]
       }],
       "Function": ["data", "Function", [], [], {}],
       "Boolean": ["data", "Boolean", [], [], {}],
