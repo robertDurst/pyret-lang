@@ -18,7 +18,7 @@
                          origin: { "import-type": "uri", uri: "builtin://valueskeleton" },
                          name: "ValueSkeleton" },
       "Table": { tag: "name",
-                 origin: { "import-type": "uri", uri: "builtin://global" },
+                 origin: { "import-type": "uri", uri: "builtin://table" },
                  name: "Table" }
     },
     values: {

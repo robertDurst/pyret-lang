@@ -1,4 +1,6 @@
-email :: Table =
+import table as T
+
+email :: T.Table =
   table: sender, subject
     row: "Matthias", "hi"
     row: "Kathi", "foo"
@@ -24,11 +26,13 @@ sender-column :: List<Any> = email.get-column('sender')
 # https://pyret.org/docs/latest/tables.html#%28part._tables_.Table_table_row-n%29
 # Expected:
 #   .row-n :: (n :: Number) -> Row
-row-1 :: Row = email.row-n(1)
+row-1 :: T.Row = email.row-n(1)
 
 # https://pyret.org/docs/latest/tables.html#%28part._tables_.Table_table_row-n%29
 # Expected:
 #   .add-column :: (colname :: String, new-vals :: List<Col>) -> Table
 # Actual:
 #   .add-column :: (colname :: String, new-vals :: List<Any>) -> Table
-email-modified :: Table = email.add-column('new-col', sender-column)
+email-modified :: T.Table = email.add-column('new-col', sender-column)
+
+

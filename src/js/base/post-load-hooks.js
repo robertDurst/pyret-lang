@@ -21,22 +21,23 @@ define("pyret-base/js/post-load-hooks", function() {
 
         runtime["checkEQ"] = runtime.makeCheckType(ffi.isEqualityResult, "EqualityResult");
       },
+      // TODO: clean this up
       "builtin://table": function(table) {
-        table = table.jsmod;
-        runtime["makeTable"] = table.makeTable;
-        runtime["makeRow"] = table.makeRow;
-        runtime["makeRowFromArray"] = table.makeRowFromArray;
-        runtime["openTable"] = table.openTable;
-        runtime["checkTable"] = runtime.makeCheckType(table.isTable, "Table");
-        runtime["checkRow"] = runtime.makeCheckType(table.isRow, "Row");
-        runtime["isTable"] = table.isTable;
-        runtime["isRow"] = table.isRow;
+        table = table.dict['defined-values'];
+        runtime["makeTable"] = table.makeTable.app;
+        runtime["makeRow"] = table.makeRow.app;
+        runtime["makeRowFromArray"] = table.makeRowFromArray.app;
+        runtime["openTable"] = table.openTable.app;
+        runtime["checkTable"] = runtime.makeCheckType(table.isTable.app, "Table");
+        runtime["checkRow"] = runtime.makeCheckType(table.isRow.app, "Row");
+        runtime["isTable"] = table.isTable.app;
+        runtime["isRow"] = table.isRow.app;
         runtime["checkWrapTable"] = function(val) {
           runtime.checkTable(val);
           return val;
         };
-        runtime.makePrimAnn("Table", table.isTable);
-        runtime.makePrimAnn("Row", table.isRow);
+        runtime.makePrimAnn("Table", table.isTable.app);
+        runtime.makePrimAnn("Row", table.isRow.app);
       },
       "builtin://data-source": function(ds) {
         ds = runtime.getField(runtime.getField(ds, "provide-plus-types"), "values");

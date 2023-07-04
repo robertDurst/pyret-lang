@@ -260,8 +260,6 @@ provide from G:
   type NumNonPositive,
   type NumNonNegative,
   type String,
-  type Table,
-  type Row,
   type Function,
   type Boolean,
   type Object,

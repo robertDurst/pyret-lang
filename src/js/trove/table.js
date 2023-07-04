@@ -7,7 +7,25 @@
   nativeRequires: [
     "pyret-base/js/type-util"
   ],
-  provides: {},
+  provides: {
+    shorthands: {
+      "Row": ["local", "Row"],
+      "Table": ["local", "Table"]
+     },
+     aliases: {
+      "Row": ["local", "Row"],
+      "Table": ["local", "Table"]
+    },
+     datatypes: {
+      "Row": ["data", "Row", [], [], { }],
+      "Table": ["data", "Table", [], [], {
+        "length": ["arrow", [], "Number"],
+        "get-column": ["arrow", ["String"], ["List", "tany"]],
+        "row-n": ["arrow", ["Number"], "Row"],
+        "add-column": ["arrow", ["String", ["List", "tany"]], "Table"]
+      }]
+    }
+  },
   theModule: function(runtime, namespace, uri, VSlib, EQlib, ffi, t) {
     var get = runtime.getField;
 
@@ -811,17 +829,28 @@
         }, "is-table"),
       }));
     }
-    
-    return runtime.makeJSModuleReturn({
-        TableAnn : annTable,
-        RowAnn : annRow,
-        makeTable: makeTable,
-        makeRow: makeRow,
-        makeRowFromArray: makeRowFromArray,
-        openTable: openTable,
-        isTable: isTable,
-        isRow: isRow
-      },
-      {});
+
+    var F = runtime.makeFunction;
+
+    var values = {
+      "makeTable": F(makeTable, "makeTable"),
+      "makeRow": F(makeRow, "makeRow"),
+      "makeRowFromArray": F(makeRowFromArray, "makeRowFromArray"),
+      "openTable": F(openTable, "openTable"),
+      "isTable": F(isTable, "isTable"),
+      "isRow": F(isRow, "isRow")
+    };
+
+    var types = {
+      Row : annRow,
+      Table : annTable,
+    };
+
+    var internal = {
+     
+    };
+
+
+    return runtime.makeModuleReturn(values, types, internal);
   }
 })

@@ -26,10 +26,7 @@
                     name: "EqualityResult" },
       "Row": { tag: "name", 
                     origin: { "import-type": "uri", uri: "builtin://global" },
-                    name: "Row" },
-      "Table": { tag: "name", 
-                    origin: { "import-type": "uri", uri: "builtin://global" },
-                    name: "Table" },
+                    name: "Row" }
     },
     values: {
       "print": ["forall", "a", ["arrow", ["tva"], "tva"]],
@@ -425,10 +422,7 @@
                     name: "RawArray" },
       "Row": { tag: "name", 
                     origin: { "import-type": "uri", uri: "builtin://global" },
-                    name: "Row" },
-      "Table": { tag: "name", 
-                    origin: { "import-type": "uri", uri: "builtin://global" },
-                    name: "Table" }
+                    name: "Row" }
     },
     datatypes: {
       "Number": ["data", "Number", [], [], {
@@ -529,12 +523,6 @@
         "_greaterequal": ["arrow", ["String"], "Boolean"]
       }],
       "Row": ["data", "Row", [], [], { }],
-      "Table": ["data", "Table", [], [], {
-        "length": ["arrow", [], "Number"],
-        "get-column": ["arrow", ["String"], ["List", "tany"]],
-        "row-n": ["arrow", ["Number"], "Row"],
-        "add-column": ["arrow", ["String", ["List", "tany"]], "Table"]
-      }],
       "Function": ["data", "Function", [], [], {}],
       "Boolean": ["data", "Boolean", [], [], {}],
       "Object": ["data", "Object", [], [], {}],

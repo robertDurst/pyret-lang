@@ -278,9 +278,6 @@
         "_greaterthan": ["arrow", ["String"], "Boolean"],
         "_greaterequal": ["arrow", ["String"], "Boolean"]
       }],
-      "Table": ["data", "Table", [], [], {
-        "length": ["arrow", [], "Number"]
-      }],
       "Function": ["data", "Function", [], [], {}],
       "Boolean": ["data", "Boolean", [], [], {}],
       "Object": ["data", "Object", [], [], {}],
