@@ -3001,6 +3001,7 @@ runtime-provides = provides("builtin://global",
     "builtins", t-record([string-dict:
         "has-field", t-arrow([list: t-record([string-dict: ])], t-boolean),
         "trace-value", t-arrow([list: t-top, t-top], t-bot),
+        "keyof", t-arrow([list: t-top], t-str),
         "current-checker", t-arrow([list: ], t-record([string-dict: # Cheat on these types for now.
             "run-checks", t-bot,
             "check-is", t-bot,

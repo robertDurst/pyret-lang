@@ -5637,6 +5637,7 @@ function (Namespace, jsnums, codePoint, util, exnStackParser, loader, seedrandom
       }, "current-checker"),
       'trace-value': makeFunction(traceValue, "trace-value"),
       'spy': makeFunction(spy, "spy"),
+      'keyof': makeFunction(keyof, "keyof"),
 
       'within-rel3' : makeFunction(equalWithinRel3, "within-rel3"),
     });
@@ -5711,6 +5712,15 @@ function (Namespace, jsnums, codePoint, util, exnStackParser, loader, seedrandom
           return thisRuntime.nothing;
         }, "spy");
       }
+
+    }
+
+    function keyof(obj) {
+      if (obj instanceof PBase) {
+        return obj.dict ? Object.keys(obj.dict).join(' | ') : Object.keys(obj).join(' | ');
+      }
+
+      return '';
     }
 
     var runtimeNamespaceBindings = {
