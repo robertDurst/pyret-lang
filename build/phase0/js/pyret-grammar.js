@@ -10,11 +10,15 @@ R(['fs', 'jglr/jglr'], function(fs, E) {
 
   var g = new Grammar("PyretGrammar", "program");
   g.addRule("program", [new Nonterm("prelude"), new Nonterm("block")])
-  g.addRule("prelude", [new Nonterm("prelude_I0*")])
-  g.addRule("prelude_I0*", [], E.Rule.Inline);
-  g.addRule("prelude_I0*", [new Nonterm("prelude_I0*"), new Nonterm("prelude_I0")], E.Rule.ListSnoc("prelude_I0*", "prelude_I0", true));
-  g.addRule("prelude_I0", [new Nonterm("provide-stmt")], E.Rule.Inline)
-  g.addRule("prelude_I0", [new Nonterm("import-stmt")], E.Rule.Inline)
+  g.addRule("prelude", [new Nonterm("prelude_I0?"), new Nonterm("prelude_I1*")])
+  g.addRule("prelude_I0?", [], E.Rule.Inline);
+  g.addRule("prelude_I0?", [new Nonterm("prelude_I0")], E.Rule.Inline);
+  g.addRule("prelude_I0", [new Nonterm("use-stmt")], E.Rule.Inline)
+  g.addRule("prelude_I1*", [], E.Rule.Inline);
+  g.addRule("prelude_I1*", [new Nonterm("prelude_I1*"), new Nonterm("prelude_I1")], E.Rule.ListSnoc("prelude_I1*", "prelude_I1", true));
+  g.addRule("prelude_I1", [new Nonterm("provide-stmt")], E.Rule.Inline)
+  g.addRule("prelude_I1", [new Nonterm("import-stmt")], E.Rule.Inline)
+  g.addRule("use-stmt", [new Token("USE"), new Token("NAME"), new Nonterm("import-source")])
   g.addRule("import-stmt", [new Token("INCLUDE"), new Nonterm("import-source")])
   g.addRule("import-stmt", [new Token("INCLUDE"), new Token("FROM"), new Nonterm("module-ref"), new Token("COLON"), new Nonterm("import-stmt_A1_I4?"), new Token("END")])
   g.addRule("import-stmt_A1_I4?", [], E.Rule.Inline);
