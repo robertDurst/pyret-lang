@@ -11,3 +11,13 @@ tbl = table: name, age
   row: "Alice", 15
   row: "Eve", 13
 end
+
+wider-tbl = table: name, age, gender
+end
+
+even-wider-tbl = table: name, age, gender, address
+end
+
+tbl.row("Foo", 11)
+wider-tbl.row("Foo", 11, "male")
+even-wider-tbl.row("Foo", 11, "male", "123 Main St.")

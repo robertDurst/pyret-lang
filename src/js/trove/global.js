@@ -524,7 +524,9 @@
         "_greaterequal": ["arrow", ["String"], "Boolean"]
       }],
       "Table": ["data", "Table", [], [], {
-        "length": ["arrow", [], "Number"]
+        "length": ["arrow", [], "Number"],
+        // TODO: defined correctly using variadic types
+        "row": ["arrow", ["tany"], "tany"],
       }],
       "Row": ["data", "Row", [], [], { }],
       "Function": ["data", "Function", [], [], {}],
